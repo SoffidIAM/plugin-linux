@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?component name="input_criteri" macro-uri="comu/input_criteri.zul"?>
+<?component name="input_dada" macro-uri="comu/input_dada.zul"?>
+<?component name="input_etiqueta" macro-uri="comu/input_etiqueta.zul"?>
+<?component name="input_password" macro-uri="comu/input_password.zul"?>
+
+<grid width="99%">
+	<columns visible="false">
+		<column width="14%" />
+		<column />
+	</columns>
+	<rows>
+		<row>
+			<input_etiqueta value="Shell" />
+			<hbox width="90%">
+				<input_dada bind="@param0" lectura="${!canModifyAgent}"
+					width_custom="98%" />
+			</hbox>
+		</row>
+		<row>
+			<input_etiqueta value="Home root directory" />
+			<hbox width="90%">
+				<input_dada bind="@param1" lectura="${!canModifyAgent}"
+					width_custom="98%" />
+			</hbox>
+		</row>
+		<row>
+			<input_etiqueta value="Create Samba Accounts" />
+			<hbox width="90%">
+				<listbox bind="@param2" disabled="${!canModifyAgent}">
+					<listitem label="yes" value="true" />
+					<listitem label="no" value="false" />
+				</listbox>
+			</hbox>
+		</row>
+	</rows>
+</grid>
